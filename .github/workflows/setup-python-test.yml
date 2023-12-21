@@ -1,0 +1,17 @@
+name: setup-python-test
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  python-action-test:
+    runs-on: ubuntu-20.04-ppc64le
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python --version
+          python my_script.py
