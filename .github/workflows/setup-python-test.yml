@@ -21,5 +21,4 @@ jobs:
           python3 --version
           python --version
           python3 my_script.py
-          python -m ensurepip
-          python -m pip install --ignore-installed pip --disable-pip-version-check --no-warn-script-location
+          pip3 --version
