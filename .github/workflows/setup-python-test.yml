@@ -15,7 +15,7 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install python3
-          alias python=python3
+          sudo ln -s /usr/bin/python3 /usr/bin/python
           python3 --version
           python --version
           python3 my_script.py
