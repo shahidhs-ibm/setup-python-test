@@ -6,14 +6,14 @@ on:
 
 jobs:
   python-action-test:
-    runs-on: ubuntu-20.04-ppc64le
+    runs-on: ubuntu-22-ppc64le
     strategy:
       matrix:
         arch: [ ppc64le ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - if: ${{ matrix.arch == 'ppc64le' }}
-        uses: deadsnakes/action@v3.1.0
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: |
