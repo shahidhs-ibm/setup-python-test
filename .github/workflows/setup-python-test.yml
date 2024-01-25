@@ -10,11 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        id: cp3121
         with:
           python-version: "3.12.1"
           architecture: 'ppc64le'
       - run: |
-          ${{ steps.cp3121.outputs.python-path }} --version
-          which python
-          python my_script.py
+          python3 --version
+          which python3
+          python3 my_script.py
