@@ -7,14 +7,17 @@ on:
 jobs:
   python-action-test:
     runs-on: ubuntu-22-ppc64le
+    strategy:
+      matrix:
+        python-version:
+        - '3.8.18'
+        - '3.10.13'
+        - '3.12.1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: |
-            3.8.18
-            3.10.13
-            3.12.1
+          python-version: ${{ matrix.python-version }}
           architecture: 'ppc64le'
       - run: |
           python --version
